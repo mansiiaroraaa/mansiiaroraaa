@@ -18,6 +18,15 @@ export const NavMenu = () => {
         About Me
       </motion.a>
       <motion.a
+        href="#casestudies"
+        className={buttonClasses}
+        variants={linkVariant}
+        whileHover="hovered"
+        whileTap="tapped"
+      >
+        Case Studies
+      </motion.a>
+      <motion.a
         href="#projects"
         className={buttonClasses}
         variants={linkVariant}

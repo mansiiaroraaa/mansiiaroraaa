@@ -42,6 +42,15 @@ export const NavMenuMobile = ({ open, setOpen }: navMenuProps) => {
             About Me
           </a>
           <a
+            href="#casestudies"
+            className="mb-2 text-xl"
+            onClick={() => {
+              setOpen(false);
+            }}
+          >
+            Case Studies
+          </a>
+          <a
             href="#projects"
             className="mb-2 text-xl"
             onClick={() => {

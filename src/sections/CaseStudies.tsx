@@ -22,7 +22,7 @@ export const CaseStudies = () => {
 
   return (
     <section
-      id="projects"
+      id="casestudies"
       className="flex flex-col justify-center items-center py-24 px-8 h-screen min-h-screen lg:py-32 lg:px-32 add-bg snap-start snap-always"
     >
       <p className="mb-12 text-3xl font-bold md:text-4xl">Case Studies</p>
