@@ -6,9 +6,9 @@ export const Intro = () => {
       <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5 }}>
         <p className="text-xl tracking-wider md:text-2xl lg:text-3xl lg:mb-1">Hi, I am</p>
         <p className="text-3xl tracking-wider md:text-4xl lg:text-5xl lg:mb-1">
-          Rakshit <strong>Arora</strong>,
+          Mansi <strong>Arora</strong>,
         </p>
-        <p className="mt-2 text-lg md:text-xl lg:text-2xl ">and I love building cool stuff 🛠️</p>
+        <p className="mt-2 text-lg md:text-xl lg:text-2xl ">and I love building and growing products 🌱</p>
       </motion.div>
     </section>
   );

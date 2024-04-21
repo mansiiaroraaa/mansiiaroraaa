@@ -10,17 +10,11 @@ export const About = () => {
         <p className="mb-4 text-3xl font-bold md:text-4xl md:mb-8">About</p>
         <div className="mb-8 text-lg md:text-xl md:mb-16">
           <p className="mb-4">
-            I am a lifelong learner with experience in Full Stack Development and Automation. I am passionate about
-            bringing ideas to life and writing readable and beautiful code.
-          </p>
-          <p>
-            In addition to development, I enjoy travelling, watching anime, listening to music, reading fiction and
-            helping communities and individuals.
+          A meticulously organised individual with a passion for detail-oriented work. I find joy in creating efficient systems and processes to simplify complex tasks. Whether it's organising my workspace or managing a project, I take pride in being able to streamline workflows and improve productivity. I am always looking for ways to learn and grow, both personally and professionally, and I value teamwork and collaboration as integral components of success.
           </p>
         </div>
         <div className="flex flex-col md:flex-row">
-          <PrimaryButton label="Resume" href="https://bit.ly/rakshit-resume" />
-          <PrimaryButton label="Mind Map" href="https://rakshit087.github.io/mind-map" />
+          <PrimaryButton label="Resume" href="" />
         </div>
       </div>
     </section>
