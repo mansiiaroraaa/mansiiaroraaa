@@ -20,7 +20,7 @@ jobs:
 
       - name: Build
         run: |
-          pnpm i
+          pnpm install --no-frozen-lockfile
           pnpm run build
           pnpm run export
           touch out/.nojekyll
