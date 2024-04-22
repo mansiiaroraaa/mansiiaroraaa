@@ -16,10 +16,10 @@ export const Connect = () => {
           <a href="mailto:mansiarora087@gmail.com">
             <SiGmail />
           </a>
-          <a href="https://github.com/mansiiaroraaa" target="_blank" rel="noreferrer">
+          <a href="https://twitter.com/Mansiiiiii__" target="_blank" rel="noreferrer">
             <SiTwitter />
           </a>
-          <a href="https://twitter.com/Mansiiiiii__" target="_blank" rel="noreferrer">
+          <a href="https://github.com/mansiiaroraaa" target="_blank" rel="noreferrer">
             <SiGithub />
           </a>
         </div>
