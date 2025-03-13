@@ -14,7 +14,7 @@ export const About = () => {
           </p>
         </div>
         <div className="flex flex-col md:flex-row">
-          <PrimaryButton label="Resume" href="https://drive.google.com/file/d/1M4FMXdiinoAOQ93pTZpKfoZS_Z98ARV0/view?usp=drivesdk" />
+          <PrimaryButton label="Resume" href="https://drive.google.com/file/d/1kyIWKj0DqLeBIlN5YGsf5ooX48mFTalk/view" />
         </div>
       </div>
     </section>
