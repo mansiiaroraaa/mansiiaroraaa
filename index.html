@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mansi Arora</title>
+<meta name="description" content="Mansi Arora — Product manager building banking rails and cross-border payment systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --ink:#14161A;
+    --soft:#4a4a45;
+    --muted:#8a8a82;
+    --line:#e6e4dc;
+    --accent:#1E8A8C;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Inter', sans-serif; font-size:16px; line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  a{color:inherit; text-decoration:none;}
+  ::selection{background:var(--accent); color:#fff;}
+
+  .u-link{position:relative; padding-bottom:1px;}
+  .u-link::after{
+    content:''; position:absolute; left:0; right:0; bottom:-1px; height:1px;
+    background:var(--line); transition:background 0.15s;
+  }
+  .u-link:hover::after{background:var(--accent);}
+  .u-link:hover{color:var(--accent);}
+
+  header{
+    position:sticky; top:0; z-index:20; width:100%;
+    background:var(--bg);
+    transition:background 0.2s, backdrop-filter 0.2s;
+  }
+  header.scrolled{
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    max-width:640px; margin:0 auto; padding:26px 24px;
+    display:flex; align-items:center; gap:32px;
+  }
+  header .name{flex:0 0 auto; font-family:'Fraunces', serif; font-weight:600; font-size:16px; color:var(--ink);}
+  header nav{margin-left:auto; display:flex; gap:24px; flex-wrap:wrap;}
+  header nav a{font-size:13.5px; color:var(--soft); font-family:'IBM Plex Mono', monospace;}
+  header nav a:hover{color:var(--accent);}
+
+  main{max-width:640px; margin:0 auto; padding:0 24px;}
+
+  #hero{
+    border-top:none; padding:64px 24px 72px;
+  }
+  #hero::before{display:none;}
+  .hero-inner{max-width:640px; margin:0 auto; width:100%;}
+  #hero h1{
+    font-family:'Inter', sans-serif; font-weight:700;
+    font-size:clamp(30px, 4.6vw, 42px); line-height:1.25; margin:0 0 22px; letter-spacing:-0.01em;
+  }
+  #hero .tag{font-size:16px; color:var(--soft); margin:0 0 32px; max-width:52ch; line-height:1.6;}
+  .co-link{color:var(--ink); text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px;}
+  .co-link:hover{color:var(--accent); text-decoration-color:var(--accent);}
+
+  section{padding:56px 0; border-top:1px solid var(--line); position:relative;}
+  section::before{
+    content:''; position:absolute; top:-1px; left:0; width:56px; height:2px; background:var(--accent);
+  }
+  section h2{
+    font-family:'Fraunces', serif; font-weight:500; font-size:24px; margin:0 0 28px; letter-spacing:-0.01em;
+  }
+
+  #about p{color:var(--soft); font-size:16px; margin:0; max-width:56ch;}
+
+  .exp-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .exp-item{
+    padding:20px 20px 18px; border:1px solid var(--line); border-radius:10px;
+    transition:border-color 0.15s;
+  }
+  .exp-item:hover{border-color:var(--accent);}
+  .exp-title{font-weight:600; font-size:15px; margin:0 0 6px;}
+  .exp-text{color:var(--soft); font-size:13.5px; margin:0 0 14px;}
+  .exp-tags{display:flex; flex-wrap:wrap; gap:6px;}
+  .exp-tags span{
+    font-size:11px; font-family:'IBM Plex Mono', monospace; color:var(--muted);
+    border:1px solid var(--line); padding:3px 9px; border-radius:3px;
+  }
+
+  .job{margin-bottom:38px; padding-left:18px; border-left:2px solid var(--line); transition:border-color 0.2s;}
+  .job:hover{border-color:var(--accent);}
+  .job:last-child{margin-bottom:0;}
+  .job-head{display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap;}
+  .job-title{font-weight:600; font-size:16.5px;}
+  .job-org{color:var(--ink); font-weight:500;}
+  .job-dates{font-size:12.5px; color:var(--muted); font-family:'IBM Plex Mono', monospace; white-space:nowrap;}
+  .job ul{margin:14px 0 0; padding:0; list-style:none;}
+  .job li{color:var(--soft); font-size:14.5px; margin-bottom:9px; padding-left:16px; position:relative;}
+  .job li::before{content:'—'; position:absolute; left:0; color:var(--muted);}
+  .job li:last-child{margin-bottom:0;}
+  .stack{font-size:12.5px; color:var(--muted); margin-top:16px; font-family:'IBM Plex Mono', monospace;}
+
+  .cs-list{border-top:1px solid var(--line);}
+  .cs-row{display:flex; gap:22px; padding:18px 0; border-bottom:1px solid var(--line); transition:padding-left 0.15s;}
+  .cs-row:hover{padding-left:6px;}
+  .cs-date{font-size:12px; color:var(--muted); font-family:'IBM Plex Mono', monospace; flex:0 0 56px; padding-top:2px;}
+  .cs-body a{font-weight:600; font-size:15px;}
+  .cs-body p{margin:6px 0 0; font-size:13.5px; color:var(--soft);}
+
+  .pp-list{display:grid; gap:24px;}
+  .pp-item a{font-weight:600; font-size:15px;}
+  .pp-item p{margin:6px 0 10px; font-size:13.5px; color:var(--soft);}
+  .pp-tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .pp-tags span{
+    font-size:11px; font-family:'IBM Plex Mono', monospace; color:var(--muted);
+    border:1px solid var(--line); padding:3px 9px; border-radius:3px;
+  }
+
+  #contact p{color:var(--soft); font-size:15px; margin:0 0 18px; max-width:56ch;}
+  .icon-row{display:flex; gap:20px; margin-top:28px;}
+  .icon-row a{
+    display:flex; align-items:center; justify-content:center;
+    width:38px; height:38px; border:1px solid var(--line); border-radius:50%;
+    color:var(--soft); transition:color 0.15s, border-color 0.15s;
+  }
+  .icon-row a:hover{color:var(--accent); border-color:var(--accent);}
+  .icon-row svg{width:18px; height:18px;}
+  #contact .email{font-family:'Fraunces', serif; font-size:20px; font-weight:500;}
+  #contact .email:hover{color:var(--accent);}
+
+  footer{
+    max-width:640px; margin:0 auto; padding:32px 24px 60px;
+    font-size:12.5px; color:var(--muted); font-family:'IBM Plex Mono', monospace;
+  }
+  @media (max-width: 560px){
+    .exp-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="header-inner">
+    <a class="name" href="#hero">Mansi Arora</a>
+    <nav>
+      <a class="u-link" href="#about">About</a>
+      <a class="u-link" href="#expertise">Expertise</a>
+      <a class="u-link" href="#experience">Experience</a>
+      <a class="u-link" href="#case-studies">Case studies</a>
+      <a class="u-link" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="hero-inner">
+    <h1>I turn ambiguous product problems into systems that actually work.</h1>
+    <p class="tag">Currently building @<a class="co-link" href="#" target="_blank" rel="noopener">INDmoney</a>, where I work across bank partnerships, building US Stocks, cross-border payments, onboarding, and external stakeholders.</p>
+    <div class="icon-row">
+      <a href="mailto:mansiarora.work@gmail.com" aria-label="Email" title="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M3 6l9 7 9-7"/></svg>
+      </a>
+      <a href="https://twitter.com/Mansiiiiii__" target="_blank" rel="noopener" aria-label="Twitter" title="Twitter">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1-1.5-1.6-4.1-1.7-5.7-.1-1 1-1.4 2.5-1.1 3.9-3.3-.2-6.3-1.8-8.2-4.3-1 1.8-.5 4.1 1.2 5.3-.6 0-1.2-.2-1.8-.5v.1c0 2 1.4 3.6 3.3 4-.6.2-1.2.2-1.8.1.5 1.6 2 2.7 3.7 2.8-1.4 1.1-3.2 1.7-5 1.5 1.7 1.1 3.7 1.7 5.8 1.7 7 0 10.8-5.8 10.8-10.8v-.5c.7-.5 1.3-1.2 1.9-2z"/></svg>
+      </a>
+      <a href="https://github.com/mansiiaroraaa" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 7 9.7.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.4-3.4-1.4-.5-1.1-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.3 1.1 2.9.9.1-.7.3-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.6-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1 .8-.2 1.6-.3 2.5-.3s1.7.1 2.5.3c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.6 1 1.5 1 2.6 0 3.8-2.4 4.6-4.6 4.9.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5 4.1-1.3 7-5.2 7-9.7C22 6.6 17.5 2 12 2z"/></svg>
+      </a>
+      <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.1c.5-1 1.9-2 3.9-2 4.1 0 4.9 2.7 4.9 6.2V23h-4v-6.9c0-1.6 0-3.8-2.3-3.8s-2.7 1.8-2.7 3.7V23h-4V8.5z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I build smart, scalable digital banking and investment products end to end — product design, onboarding, cross-border payments, financial workflows, and the bank partnerships that make all of it possible. I lead with data: funnel numbers, cohort behaviour, the ticket that reveals a broken flow, then design and ship the fix with the teams around me. I write my own PRDs, debug SQL myself, and build with Claude Code as my actual working environment, always looking for a faster way to get from problem to something users can touch.</p>
+  </section>
+
+  <section id="expertise">
+    <h2>Core expertise</h2>
+    <div class="exp-grid">
+      <div class="exp-item">
+        <p class="exp-title">Product strategy</p>
+        <p class="exp-text">Defining roadmaps and PRDs that align bank partners, compliance, and engineering.</p>
+        <div class="exp-tags"><span>Roadmapping</span><span>PRDs</span><span>Prioritisation</span></div>
+      </div>
+      <div class="exp-item">
+        <p class="exp-title">Growth &amp; experimentation</p>
+        <p class="exp-text">Turning a broken onboarding flow into a real, measured lift through funnel and cohort work.</p>
+        <div class="exp-tags"><span>A/B testing</span><span>Funnels</span><span>Cohorts</span></div>
+      </div>
+      <div class="exp-item">
+        <p class="exp-title">Data &amp; analytics</p>
+        <p class="exp-text">Making decisions with SQL, Redshift, Mixpanel, and reconciliation dashboards.</p>
+        <div class="exp-tags"><span>SQL</span><span>Redshift</span><span>Mixpanel</span></div>
+      </div>
+      <div class="exp-item">
+        <p class="exp-title">Fintech &amp; banking</p>
+        <p class="exp-text">Building investment, remittance, and onboarding products across five-plus bank partners.</p>
+        <div class="exp-tags"><span>KYC/vKYC</span><span>Remittances</span><span>Compliance</span></div>
+      </div>
+      <div class="exp-item">
+        <p class="exp-title">Stakeholder management</p>
+        <p class="exp-text">Aligning engineering, compliance, and external bank teams through the full delivery cycle.</p>
+        <div class="exp-tags"><span>Cross-functional</span><span>Bank partners</span><span>Delivery</span></div>
+      </div>
+      <div class="exp-item">
+        <p class="exp-title">AI-native building</p>
+        <p class="exp-text">Writing PRDs, debugging SQL, and shipping with Claude Code as my actual working environment.</p>
+        <div class="exp-tags"><span>Claude Code</span><span>Prompt engineering</span><span>Automation</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Associate Product Manager</span> · <span class="job-org">INDmoney</span></div>
+        <div class="job-dates">Jul '24 — Ongoing</div>
+      </div>
+      <ul>
+        <li>Own partnerships and PRDs across Axis, Federal, ICICI and Kotak Bank, letting users invest in US equities through banks they already hold accounts with.</li>
+        <li>Keep ~5,000 daily cross-border transactions (~$700K volume) reconciling cleanly across payment gateways, banks and internal ledgers.</li>
+        <li>Migrated remittance from web-view to native mobile — new-user conversion moved 8% → 24%, repeat usage 17% → 52%.</li>
+        <li>Own the Federal Bank onboarding journey end to end — KYC, vKYC, account creation, first remittance — lifting funnel conversion 4% → 7%.</li>
+        <li>Partnered with Nugget to ship a GenAI voicebot resolving failed vKYC attempts in real time, and led chatbot automation that cut support ticket volume.</li>
+      </ul>
+      <p class="stack">SQL / Redshift, Mixpanel, Postman, Claude Code, Jira, Confluence</p>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Product &amp; Growth Intern</span> · <span class="job-org">FamPay</span></div>
+        <div class="job-dates">Aug '23 — Dec '23</div>
+      </div>
+      <ul>
+        <li>Ran SQL and CleverTap-based segmentation and built deep-link campaigns to lift engagement across FamApp.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Partnerships &amp; Strategy Intern</span> · <span class="job-org">Paytm</span></div>
+        <div class="job-dates">Jun '23 — Jul '23</div>
+      </div>
+      <ul>
+        <li>Onboarded 15+ FMCG brands and built pipeline tracking across five cross-functional teams.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Product Intern</span> · <span class="job-org">GeeksforGeeks</span></div>
+        <div class="job-dates">Jan '24 — Mar '24</div>
+      </div>
+      <ul>
+        <li>Shaped roadmap for web courses and streamlined SDE team workflows in Jira for faster delivery.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="case-studies">
+    <h2>Case studies</h2>
+    <div class="cs-list">
+      <div class="cs-row">
+        <span class="cs-date mono">Aug '23</span>
+        <div class="cs-body">
+          <a class="u-link" href="https://drive.google.com/file/d/19ZNdpIOAYgES6X6ptSc3EYXIGgR7Lp57/view?usp=drivesdk" target="_blank" rel="noopener">Fampay transaction analysis</a>
+          <p>Investigating a drop in transactions on India's teen-centric financial app.</p>
+        </div>
+      </div>
+      <div class="cs-row">
+        <span class="cs-date mono">May '24</span>
+        <div class="cs-body">
+          <a class="u-link" href="https://drive.google.com/file/d/12zbTwvlUKgU66ff6lcRWlm_HuSICNmr3/view?usp=drivesdk" target="_blank" rel="noopener">Table reservation app</a>
+          <p>User flow and wireframes for a mobile dining-reservation experience.</p>
+        </div>
+      </div>
+      <div class="cs-row">
+        <span class="cs-date mono">Apr '24</span>
+        <div class="cs-body">
+          <a class="u-link" href="https://drive.google.com/file/d/1eTWSuqFvngsTVwtyVWvB_xVHYBprPyAD/view?usp=drivesdk" target="_blank" rel="noopener">Pinterest's transformation</a>
+          <p>From passive bookmarking platform to an active hub of inspiration.</p>
+        </div>
+      </div>
+      <div class="cs-row">
+        <span class="cs-date mono">Mar '24</span>
+        <div class="cs-body">
+          <a class="u-link" href="https://drive.google.com/file/d/16hT0kq4KKpsCrhy87G9gbc5dMz21T3Ot/view?usp=drivesdk" target="_blank" rel="noopener">Streamlining travel</a>
+          <p>Real-time flight info and digital boarding passes for a simpler trip.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="personal-projects">
+    <h2>Personal projects</h2>
+    <div class="pp-list">
+      <div class="pp-item">
+        <a class="u-link" href="https://github.com/mansiiaroraaa/sales-analysis" target="_blank" rel="noopener">Sales data analysis</a>
+        <p>Using NumPy, Pandas and Matplotlib to find sales cycles and target segments.</p>
+        <div class="pp-tags"><span>Python</span><span>NumPy</span><span>Pandas</span><span>Matplotlib</span></div>
+      </div>
+      <div class="pp-item">
+        <a class="u-link" href="https://github.com/mansiiaroraaa/ecommerce" target="_blank" rel="noopener">Home decor e-commerce site</a>
+        <p>A responsive storefront with listings, cart and checkout, built from scratch.</p>
+        <div class="pp-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>I love connecting with different people, and it'd be awesome if we could get in touch. You can also find me on these platforms:</p>
+    <p><a class="email u-link" href="mailto:mansiarora.work@gmail.com">mansiarora.work@gmail.com</a></p>
+    <div class="icon-row">
+      <a href="mailto:mansiarora.work@gmail.com" aria-label="Email" title="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M3 6l9 7 9-7"/></svg>
+      </a>
+      <a href="https://twitter.com/Mansiiiiii__" target="_blank" rel="noopener" aria-label="Twitter" title="Twitter">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1-1.5-1.6-4.1-1.7-5.7-.1-1 1-1.4 2.5-1.1 3.9-3.3-.2-6.3-1.8-8.2-4.3-1 1.8-.5 4.1 1.2 5.3-.6 0-1.2-.2-1.8-.5v.1c0 2 1.4 3.6 3.3 4-.6.2-1.2.2-1.8.1.5 1.6 2 2.7 3.7 2.8-1.4 1.1-3.2 1.7-5 1.5 1.7 1.1 3.7 1.7 5.8 1.7 7 0 10.8-5.8 10.8-10.8v-.5c.7-.5 1.3-1.2 1.9-2z"/></svg>
+      </a>
+      <a href="https://github.com/mansiiaroraaa" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 7 9.7.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.4-3.4-1.4-.5-1.1-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.3 1.1 2.9.9.1-.7.3-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.6-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1 .8-.2 1.6-.3 2.5-.3s1.7.1 2.5.3c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.6 1 1.5 1 2.6 0 3.8-2.4 4.6-4.6 4.9.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5 4.1-1.3 7-5.2 7-9.7C22 6.6 17.5 2 12 2z"/></svg>
+      </a>
+      <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.1c.5-1 1.9-2 3.9-2 4.1 0 4.9 2.7 4.9 6.2V23h-4v-6.9c0-1.6 0-3.8-2.3-3.8s-2.7 1.8-2.7 3.7V23h-4V8.5z"/></svg>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Mansi Arora</footer>
+
+<script>
+  var header = document.getElementById('site-header');
+  window.addEventListener('scroll', function(){
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+</script>
+
+</body>
+</html>
